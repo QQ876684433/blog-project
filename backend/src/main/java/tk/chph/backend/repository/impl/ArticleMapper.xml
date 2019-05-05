@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tk.chph.backend.repository.ArticleRepository">
+    <select id="getArticles" resultType="tk.chph.backend.pojo.Article">
+        select id, title, date, tag_id as tagId, abstract as abstracts
+        from t_article;
+    </select>
+
+    <select id="getDateAndTitle" resultType="tk.chph.backend.pojo.Archive">
+        select id, date, title
+        from t_article;
+    </select>
+
+    <select id="findArticles" parameterType="string" resultType="tk.chph.backend.pojo.SearchResult">
+        select id, title, abstract as abstracts
+        from t_article
+        where title like '%'#{key}'%'
+           or abstract like '%'#{key}'%'
+    </select>
+</mapper>
