@@ -5,11 +5,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Tag {
+public class TagArchive {
     private long id;
-    private String name;
-    private int articleNum;
+    private String title;
 
-    public Tag() {
+    public TagArchive() {
     }
 }
