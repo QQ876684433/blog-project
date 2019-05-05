@@ -32,7 +32,7 @@ class Response<T>{
   	private String title;
   	private Date date;
   	private long tagId;
-  	private String abstract;
+  	private String abstracts;
   	// private Category category;
       private String content;
       
@@ -87,7 +87,7 @@ class Response<T>{
 
 #### 3.1 POJO
 
-- YearlyArchive
+- Archive
 
   ```java
   class Archive{
@@ -107,7 +107,7 @@ class Response<T>{
   	private String title;
   	private Date date;
   	private long tagId;
-  	private String abstract;
+  	private String abstracts;
       
       // getters and setters
   }
@@ -130,7 +130,7 @@ class Response<T>{
   class SearchResult{
   	private long id;
   	private String title;
-  	private String abstract;
+  	private String abstracts;
   	
   	// getters and setters
   }
@@ -143,7 +143,7 @@ class Response<T>{
 - ArticleRepository
   - `List<Article> getArticles()`    使用PageHelper插件查询指定页数和页大小的文章列表
   - `List<Archive> getDateAndTitle()`    查找所有文章的日期和标题列表
-  - `List<SearchResult> findArticles(String key)`    根据关键字查找标题和摘要中包含该关键字的文章列表
+  - `List<SearchResult> findArticles(String key)`    根据关键字查找标题和摘要中包含该关键字的文章列表
 - ArticleContentRepository（为了方便，mongodb的数据访问接口单独抽出来）
   - `String getArticleContent(long articleId)`    根据文章id查询文章内容
 - TagRepository
