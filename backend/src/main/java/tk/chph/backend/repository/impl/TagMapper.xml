@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tk.chph.backend.repository.TagRepository">
+    <select id="getName" resultType="string">
+        select name
+        from t_tag
+        where id = #{tagId}
+    </select>
+
+    <select id="getArticles">
+        select articles
+        from t_tag
+        where id = #{tagId}
+    </select>
+
+    <select id="getTags" resultType="tk.chph.backend.pojo.Tag">
+        select id, article_num
+        from t_tag;
+    </select>
+</mapper>
