@@ -57,6 +57,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <!-- mybatis的xml映射文件 -->
+                <directory>src/main/java/tk/chph/backend/repository/impl</directory>
+                <includes>
+                    <include>*.xml</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
 </project>
