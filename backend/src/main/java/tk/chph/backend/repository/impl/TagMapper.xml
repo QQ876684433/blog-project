@@ -16,7 +16,7 @@
     </select>
 
     <select id="getTags" resultType="tk.chph.backend.pojo.Tag">
-        select id, article_num
+        select id, name, article_num
         from t_tag;
     </select>
 </mapper>
