@@ -19,4 +19,11 @@
         where title like '%'#{key}'%'
            or abstract like '%'#{key}'%'
     </select>
+
+    <select id="getArticleNames" resultType="tk.chph.backend.pojo.TagArchive">
+        select id, title from t_article where id in
+        <foreach item="articleId" index="index" collection="articleIds" open="(" close=")" separator=",">
+            #{articleId}
+        </foreach>
+    </select>
 </mapper>
