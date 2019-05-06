@@ -1,11 +1,11 @@
 package tk.chph.backend.repository;
 
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 import tk.chph.backend.pojo.Tag;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface TagRepository {
     String getName(long tagId);
 
