@@ -9,7 +9,7 @@
         where id = #{tagId}
     </select>
 
-    <select id="getArticles">
+    <select id="getArticles" resultType="string">
         select articles
         from t_tag
         where id = #{tagId}
