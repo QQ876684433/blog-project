@@ -35,6 +35,7 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<Article> getArchives(long tagId) {
         String articles = tagRepository.getArticles(tagId);
+        if (articles == null) return null;
         List<Integer> articleIdList =
                 Arrays.stream(articles.split(ARTICLE_ID_SEPARATOR))
                         .map(Integer::parseInt)
