@@ -17,7 +17,7 @@ public class SearchController {
     @Autowired
     private SearchService searchService;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public Response<List<Article>> getSearchResult(String key) {
         List<Article> articles = searchService.getSearchResult(key);
         Response<List<Article>> response = new Response<>();
