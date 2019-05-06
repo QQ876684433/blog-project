@@ -1,6 +1,6 @@
 package tk.chph.backend.repository;
 
-import org.springframework.stereotype.Repository;
+import org.apache.ibatis.annotations.Mapper;
 import tk.chph.backend.pojo.Archive;
 import tk.chph.backend.pojo.Article;
 import tk.chph.backend.pojo.SearchResult;
@@ -8,7 +8,7 @@ import tk.chph.backend.pojo.TagArchive;
 
 import java.util.List;
 
-@Repository
+@Mapper
 public interface ArticleRepository {
     List<Article> getArticles();
 
