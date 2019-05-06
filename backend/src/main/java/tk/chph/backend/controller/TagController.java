@@ -38,7 +38,10 @@ public class TagController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public Response<List<Tag>> getAllTags() {
-        // todo
-        return null;
+        List<Tag> tags = tagService.getAllTags();
+        Response<List<Tag>> response = new Response<>();
+        response.setStatus(HttpServletResponse.SC_OK);
+        response.setValue(tags);
+        return response;
     }
 }
